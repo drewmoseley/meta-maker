@@ -6,7 +6,7 @@ HOMEPAGE = "https://github.com/rbarrois/python-semanticversion"
 LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=4fb31e3c1c7eeb8b5e8c07657cdd54e2"
 
-SRC_URI = "git://github.com/rbarrois/python-semanticversion.git;protocol=https"
+SRC_URI = "git://github.com/rbarrois/python-semanticversion.git;protocol=git"
 SRCREV = "cd6143f829e59e5fea9d4e8d244dfe8d4d6c80d3"
 
 # Exact version, no need for +git...

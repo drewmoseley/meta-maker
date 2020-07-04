@@ -11,7 +11,7 @@ S = "${WORKDIR}/git"
 
 inherit setuptools
 
-DEPENDS = "python-certifi"
+DEPENDS = "python3-certifi"
 
 RDEPENDS_${PN} = " \
     ${PYTHON_PN}-compression \
@@ -29,5 +29,5 @@ RDEPENDS_${PN} = " \
     ${PYTHON_PN}-subprocess \
 "
 
-RCONFLICTS_${PN} = "python-tornado python-tornado40 python-tornado45"
+RCONFLICTS_${PN} = "python3-tornado python3-tornado40 python3-tornado45"
 

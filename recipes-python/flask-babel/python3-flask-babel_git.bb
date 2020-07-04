@@ -4,7 +4,7 @@ SECTION = "devel/python"
 LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=51917f3e8e858f5ae295a7d0e2eb3cc9"
 
-DEPENDS = "python-speaklater python-babel"
+DEPENDS = "python3-speaklater python3-babel"
 
 SRC_URI = "git://github.com/mitsuhiko/flask-babel.git;protocol=https"
 SRCREV = "bfd004db4b77cf91f0f7354d48205526822a0511"
@@ -20,6 +20,6 @@ export HOST_SYS
 export STAGING_INCDIR
 export STAGING_LIBDIR
 
-RDEPENDS_${PN} = "python-speaklater python-babel"
+RDEPENDS_${PN} = "python3-speaklater python3-babel"
 
 BBCLASSEXTEND = "native"

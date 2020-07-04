@@ -4,7 +4,7 @@ HOMEPAGE = "https://dateutil.readthedocs.org"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=e3155c7bdc71f66e02678411d2abf996"
 
-PYPI_PACKAGE = "python-dateutil"
+PYPI_PACKAGE = "python3-dateutil"
 inherit pypi
 
 PACKAGES =+ "${PN}-zoneinfo"

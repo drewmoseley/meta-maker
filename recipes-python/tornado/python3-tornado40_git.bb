@@ -11,10 +11,10 @@ S = "${WORKDIR}/git"
 
 inherit setuptools
 
-DEPENDS = "python-certifi"
+DEPENDS = "python3-certifi"
 
-RDEPENDS_${PN} = "python-certifi"
-RCONFLICTS_${PN} = "python-tornado"
-RCONFLICTS_${PN} = "python-tornado45"
-RCONFLICTS_${PN} = "python-tornado50"
+RDEPENDS_${PN} = "python3-certifi"
+RCONFLICTS_${PN} = "python3-tornado"
+RCONFLICTS_${PN} = "python3-tornado45"
+RCONFLICTS_${PN} = "python3-tornado50"
 

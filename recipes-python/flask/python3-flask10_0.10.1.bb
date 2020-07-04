@@ -17,4 +17,4 @@ inherit setuptools
 
 CLEANBROKEN = "1"
 
-RCONFLICTS_${PN} = "python-flask"
+RCONFLICTS_${PN} = "python3-flask"

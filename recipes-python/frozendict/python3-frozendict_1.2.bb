@@ -1,4 +1,4 @@
-SUMMARY = "python-frozendict recipe"
+SUMMARY = "python3-frozendict recipe"
 
 LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://${S}/LICENSE.txt;md5=f4da037a49c09b456fdbbc7a5bd36132"

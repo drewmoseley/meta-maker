@@ -19,8 +19,8 @@ export HOST_SYS
 export STAGING_INCDIR
 export STAGING_LIBDIR
 
-RCONFLICTS_${PN} += "python-werkzeug python-werkzeug08 python-werkzeug-tests"
-RPROVIDES_${PN} += "python-werkzeug python-werkzeug-tests"
+RCONFLICTS_${PN} += "python3-werkzeug python3-werkzeug08 python3-werkzeug-tests"
+RPROVIDES_${PN} += "python3-werkzeug python3-werkzeug-tests"
 
 CLEANBROKEN = "1"
 BBCLASSEXTEND = "native"

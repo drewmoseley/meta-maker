@@ -20,9 +20,9 @@ export HOST_SYS
 export STAGING_INCDIR
 export STAGING_LIBDIR
 
-RDEPENDS_${PN} = "python-nose \
-                  python-regex \
-                  python-unidecode \
+RDEPENDS_${PN} = "python3-nose \
+                  python3-regex \
+                  python3-unidecode \
                  "
 
 BBCLASSEXTEND = "native"

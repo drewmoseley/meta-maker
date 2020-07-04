@@ -3,7 +3,7 @@ HOMEPAGE = "http://www.pyyaml.org"
 SECTION = "devel/python"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=6015f088759b10e0bc2bf64898d4ae17"
-DEPENDS = "libyaml python-cython-native"
+DEPENDS = "libyaml python3-cython-native"
 
 SRC_URI = "http://pyyaml.org/download/pyyaml/PyYAML-${PV}.tar.gz \
            file://setup.py \
@@ -21,6 +21,6 @@ do_configure_prepend() {
     install -m 0644 ${WORKDIR}/setup.py ${S}
 }
 
-RCONFLICTS_${PN} += "python-pyyaml"
+RCONFLICTS_${PN} += "python3-pyyaml"
 
 BBCLASSEXTEND = "native"

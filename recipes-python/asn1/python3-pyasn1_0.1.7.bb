@@ -13,4 +13,4 @@ S = "${WORKDIR}/pyasn1-${PV}"
 
 inherit setuptools
 
-RDEPENDS_${PN} += "python-lang python-shell"
+RDEPENDS_${PN} += "python3-lang python3-shell"

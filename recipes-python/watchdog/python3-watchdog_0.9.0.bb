@@ -6,7 +6,7 @@ HOMEPAGE = "http://http://werkzeug.pocoo.org/"
 LICENSE = "Apache-2.0"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=3b83ef96387f14655fc854ddc3c6bd57"
 
-DEPENDS = "python-argh"
+DEPENDS = "python3-argh"
 
 SRC_URI = "https://pypi.python.org/packages/source/w/watchdog/watchdog-${PV}.tar.gz"
 SRC_URI[md5sum] = "7cdc103f607e72fc32c206301a72d1b2"
@@ -21,6 +21,6 @@ export HOST_SYS
 export STAGING_INCDIR
 export STAGING_LIBDIR
 
-RDEPENDS_${PN} = "python-argh"
+RDEPENDS_${PN} = "python3-argh"
 
 BBCLASSEXTEND = "native"
