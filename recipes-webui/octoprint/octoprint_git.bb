@@ -78,7 +78,7 @@ RDEPENDS_${PN} = "python3-awesome-slugify \
                   python3-backports-ssl \
                   python3-blinker \
                   python3-feedparser \
-                  python3-flask10 \
+                  python3-flask \
                   python3-flask-assets \
                   python3-flask-babel \
                   python3-flask-login2 \
@@ -86,7 +86,7 @@ RDEPENDS_${PN} = "python3-awesome-slugify \
                   python3-frozendict \
                   python3-html \
                   python3-itsdangerous \
-                  python3-jinja2.8 \
+                  python3-jinja2 \
                   python3-json \
                   python3-markdown \
                   python3-netaddr \
@@ -99,16 +99,15 @@ RDEPENDS_${PN} = "python3-awesome-slugify \
                   python3-psutil \
                   python3-pylru \
                   python3-pyserial \
-                  python3-pyyaml313 \
+                  python3-pyyaml \
                   python3-requests \
                   python3-rsa \
                   python3-sarge \
                   python3-semantic-version \
                   python3-singledispatch \
-                  python3-sockjs-tornado45 \
                   python3-sphinx-rtd-theme \
                   python3-sphinxcontrib-httpdomain \
-                  python3-tornado45 \
+                  python3-tornado \
                   python3-watchdog \
                   python3-werkzeug \
                   python3-werkzeug-tests \
