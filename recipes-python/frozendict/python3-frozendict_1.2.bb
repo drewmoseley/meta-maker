@@ -10,5 +10,4 @@ SRC_URI = "git://github.com/slezica/python-frozendict.git"
 
 S = "${WORKDIR}/git"
 
-inherit setuptools
-
+inherit setuptools3

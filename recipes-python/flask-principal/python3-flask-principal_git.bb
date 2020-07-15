@@ -14,7 +14,7 @@ PV = "0.4.0"
 
 S = "${WORKDIR}/git"
 
-inherit setuptools
+inherit setuptools3
 
 export BUILD_SYS
 export HOST_SYS

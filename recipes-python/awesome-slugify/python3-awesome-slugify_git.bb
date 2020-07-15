@@ -13,7 +13,7 @@ PV = "1.6.5+git${SRCPV}"
 
 S = "${WORKDIR}/git"
 
-inherit setuptools
+inherit setuptools3
 
 export BUILD_SYS
 export HOST_SYS

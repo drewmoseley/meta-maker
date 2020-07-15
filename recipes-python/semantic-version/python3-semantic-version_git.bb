@@ -7,14 +7,14 @@ LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=4fb31e3c1c7eeb8b5e8c07657cdd54e2"
 
 SRC_URI = "git://github.com/rbarrois/python-semanticversion.git;protocol=git"
-SRCREV = "cd6143f829e59e5fea9d4e8d244dfe8d4d6c80d3"
+SRCREV = "9e968aef1a8aee4039b3052acc6f439b03bc315c"
 
 # Exact version, no need for +git...
-PV = "2.6.0"
+PV = "2.8.5"
 
 S = "${WORKDIR}/git"
 
-inherit setuptools
+inherit setuptools3
 
 export BUILD_SYS
 export HOST_SYS

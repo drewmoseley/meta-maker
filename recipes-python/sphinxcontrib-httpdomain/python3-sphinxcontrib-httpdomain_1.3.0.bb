@@ -13,7 +13,7 @@ SRC_URI[sha256sum] = "ba8fbe82eddc96cfa9d7b975b0422801a14ace9d7e051b8b2c725b92ea
 
 S = "${WORKDIR}/sphinxcontrib-httpdomain-${PV}"
 
-inherit setuptools
+inherit setuptools3
 
 export BUILD_SYS
 export HOST_SYS

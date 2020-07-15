@@ -13,7 +13,7 @@ SRC_URI[sha256sum] = "0f29f544f6d037989fa0c7729a9eab7e4d8ea50d6f0ef37363f472756c
 
 S = "${WORKDIR}/sphinx_rtd_theme-${PV}"
 
-inherit setuptools
+inherit setuptools3
 
 export BUILD_SYS
 export HOST_SYS

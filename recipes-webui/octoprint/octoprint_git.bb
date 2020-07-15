@@ -6,12 +6,12 @@ SECTION = "devel/python"
 LICENSE = "AGPL-3.0"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=73f1eb20517c55bf9493b7dd6e480788"
 
-SRCREV = "2287c65784a38728bfaf72ead2973683a2ee9a72"
+SRCREV = "32b655451cd170d50e4c2e2d561141b20a6bf75b"
 
-PV = "1.4.0rc+git${SRCPV}"
+PV = "1.4.0+git${SRCPV}"
 
 PATCHTOOL = "git"
-SRC_URI = "git://github.com/foosel/OctoPrint.git;protocol=https;branch=maintenance \
+SRC_URI = "git://github.com/OctoPrint/OctoPrint.git;protocol=https;branch=maintenance \
            file://config.yaml \
            file://octoprint.service \
            file://octoprint \
@@ -19,7 +19,7 @@ SRC_URI = "git://github.com/foosel/OctoPrint.git;protocol=https;branch=maintenan
 "
 S = "${WORKDIR}/git"
 
-inherit setuptools systemd useradd
+inherit setuptools3 systemd useradd
 
 
 export BUILD_SYS
@@ -35,7 +35,9 @@ do_configure_prepend() {
 }
 
 do_install_append() {
-
+    # We explicitly call distutils_do_install
+    distutils3_do_install
+    
     sed -i -e s:/etc:${sysconfdir}:g ${WORKDIR}/octoprint.service
     sed -i -e s:/etc:${sysconfdir}:g ${WORKDIR}/config.yaml
     sed -i -e 's: /sbin: ${base_sbindir}:g' ${WORKDIR}/octoprint
@@ -44,13 +46,13 @@ do_install_append() {
 
     install -d ${D}${sysconfdir}/octoprint
     install -m 0644 ${WORKDIR}/config.yaml ${D}${sysconfdir}/octoprint/config.yaml
-    chmod a+rw ${D}${sysconfdir}/octoprint/config.yaml
+    chmod 600 ${D}${sysconfdir}/octoprint/config.yaml
 
     install -d ${D}/lib/systemd/system
     install -m 0644 ${WORKDIR}/octoprint.service ${D}${systemd_unitdir}/system
 
     install -d ${D}${localstatedir}/lib/octoprint
-    chmod a+rw ${D}${localstatedir}/lib/octoprint
+    chmod 700 ${D}${localstatedir}/lib/octoprint
 
     install -d ${D}${sysconfdir}/sudoers.d
     install -m 0644 ${WORKDIR}/octoprint ${D}${sysconfdir}/sudoers.d/
@@ -69,9 +71,11 @@ SYSTEMD_SERVICE_${PN} = "octoprint.service"
 FILES_${PN} += "${sysconfdir} ${localstatedir}"
 CONFFILES_${PN} += "${sysconfdir}/octoprint/config.yaml"
 
-pkg_postinst_${PN}_append () {
-        chown -R octoprint $D${sysconfdir}/octoprint
+do_install_append () {
+        chown -R octoprint ${D}${sysconfdir}/octoprint
 }
+
+DEPENDS_append = " python3-markdown-native "
 
 RDEPENDS_${PN} = "python3-awesome-slugify \
                   python3-backports-abc \
@@ -81,7 +85,7 @@ RDEPENDS_${PN} = "python3-awesome-slugify \
                   python3-flask \
                   python3-flask-assets \
                   python3-flask-babel \
-                  python3-flask-login2 \
+                  python3-flask-login \
                   python3-flask-principal \
                   python3-frozendict \
                   python3-html \
@@ -118,9 +122,15 @@ RDEPENDS_${PN} = "python3-awesome-slugify \
                   python3-websocket-client \
                   python3-dateutil \
                   python3-wrapt \
-                  python3-futures \
                   python3-emoji \
                   python3-monotonic \
+                  python3-unidecode \
+                  python3-filetype \
+                  python3-sentry-sdk \
+                  python3-cachelib \
+                  python3-octoprint-filecheck \
+                  python3-octoprint-firmwarecheck \
+                  python3-typing \
                   sudo \
                   curaengine \ 
 "

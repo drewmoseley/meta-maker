@@ -14,7 +14,7 @@ SRC_URI[sha256sum] = "1a836406405730121ae9823e19c6e806c62bbad73f890574fff50efa41
 
 S = "${WORKDIR}/rsa-${PV}"
 
-inherit setuptools
+inherit setuptools3
 
 export BUILD_SYS
 export HOST_SYS

@@ -13,7 +13,7 @@ SRC_URI[sha256sum] = "7c35c5421a39bb82e58018febd90e3b6e5db34c5443aaaf742b3f33d46
 
 S = "${WORKDIR}/pathtools-${PV}"
 
-inherit setuptools
+inherit setuptools3
 
 export BUILD_SYS
 export HOST_SYS

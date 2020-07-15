@@ -9,13 +9,13 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=2c0c455026ee819a9365678bea8b2c82"
 DEPENDS = "python3-webassets"
 
 SRC_URI = "git://github.com/miracle2k/flask-assets.git;protocol=https"
-SRCREV = "6ec476f8a91a4272915da3875c49676bd2baddcb"
+SRCREV = "2.0"
 
-PV = "0.12+git${SRCPV}"
+PV = "2.0+git${SRCPV}"
 
 S = "${WORKDIR}/git"
 
-inherit setuptools
+inherit setuptools3
 
 export BUILD_SYS
 export HOST_SYS
