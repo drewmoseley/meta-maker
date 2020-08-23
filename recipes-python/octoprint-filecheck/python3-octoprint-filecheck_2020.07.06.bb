@@ -7,7 +7,7 @@ LICENSE = "AGPLv3"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=73f1eb20517c55bf9493b7dd6e480788"
 
 SRC_URI = "git://github.com/OctoPrint/OctoPrint-FileCheck.git;protocol=https;branch=master"
-SRCREV = "76619fd2c6b96f5894df85d0db10930438b03be3"
+SRCREV = "a17304ca3c2245b76f6c64a757dd52def9ca947c"
 S = "${WORKDIR}/git"
 
 inherit setuptools3
