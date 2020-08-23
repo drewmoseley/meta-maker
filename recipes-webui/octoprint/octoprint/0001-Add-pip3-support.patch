@@ -1,0 +1,26 @@
+From 024713773b0675885f51a2f3df71847511bb1be1 Mon Sep 17 00:00:00 2001
+From: Drew Moseley <drew.moseley@northern.tech>
+Date: Sun, 23 Aug 2020 15:04:22 -0400
+Subject: [PATCH 1/2] Add pip3 support.
+
+Signed-off-by: Drew Moseley <drew.moseley@northern.tech>
+---
+ src/octoprint/util/pip.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/octoprint/util/pip.py b/src/octoprint/util/pip.py
+index a1377cf6d..3773b8248 100644
+--- a/src/octoprint/util/pip.py
++++ b/src/octoprint/util/pip.py
+@@ -252,7 +252,7 @@ class PipCaller(CommandlineCaller):
+ 	@classmethod
+ 	def autodetect_pip(cls):
+ 		commands = [[sys.executable, "-m", "pip"],
+-		            [os.path.join(os.path.dirname(sys.executable), "pip.exe" if sys.platform == "win32" else "pip")],
++		            [os.path.join(os.path.dirname(sys.executable), "pip3.exe" if sys.platform == "win32" else "pip3")],
+ 
+ 		            # this should be our last resort since it might fail thanks to using pip programmatically like
+ 		            # that is not officially supported or sanctioned by the pip developers
+-- 
+2.28.0
+

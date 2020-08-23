@@ -1,0 +1,36 @@
+From 34534611ee500211d39be01766cf7e485e4cbedd Mon Sep 17 00:00:00 2001
+From: Drew Moseley <drew.moseley@northern.tech>
+Date: Sun, 23 Aug 2020 15:08:21 -0400
+Subject: [PATCH 2/2] Add python3 support
+
+Signed-off-by: Drew Moseley <drew.moseley@northern.tech>
+---
+ docs/conf.py | 1 +
+ setup.py     | 2 +-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/docs/conf.py b/docs/conf.py
+index e774cb6bb..c9f089682 100644
+--- a/docs/conf.py
++++ b/docs/conf.py
+@@ -39,6 +39,7 @@ extensions = ['codeblockext', 'onlineinclude', 'sphinx.ext.todo', 'sphinx.ext.au
+ todo_include_todos = True
+ intersphinx_mapping = {'python': ('https://docs.python.org/3', None),
+                        'python2': ('https://docs.python.org/2', None),
++                       'python3': ('https://docs.python.org/3', None),
+                        'pyserial': ('https://pythonhosted.org/pyserial', None)}
+ 
+ # Add any paths that contain templates here, relative to this directory.
+diff --git a/setup.py b/setup.py
+index 208fa2fca..223a11d9b 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python2
++#!/usr/bin/env python3
+ # coding=utf-8
+ 
+ from distutils.command.build_py import build_py as _build_py
+-- 
+2.28.0
+
