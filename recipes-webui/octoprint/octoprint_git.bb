@@ -48,7 +48,7 @@ do_install_append() {
     install -m 0644 ${WORKDIR}/config.yaml ${D}${sysconfdir}/octoprint/config.yaml
     chmod 600 ${D}${sysconfdir}/octoprint/config.yaml
 
-    install -d ${D}/lib/systemd/system
+    install -d ${D}${systemd_unitdir}/system
     install -m 0644 ${WORKDIR}/octoprint.service ${D}${systemd_unitdir}/system
 
     install -d ${D}${localstatedir}/lib/octoprint
@@ -77,7 +77,8 @@ do_install_append () {
 
 DEPENDS_append = " python3-markdown-native "
 
-RDEPENDS_${PN} = "python3-awesome-slugify \
+RDEPENDS_${PN}_class-target = " \
+                  python3-awesome-slugify \
                   python3-backports-abc \
                   python3-backports-ssl \
                   python3-blinker \
@@ -135,7 +136,8 @@ RDEPENDS_${PN} = "python3-awesome-slugify \
                   curaengine \ 
 "
 
-RRECOMMENDS_${PN} = "ffmpeg \
+RRECOMMENDS_${PN}_class-target = "\
+                     ffmpeg \
                      mjpg-streamer \
                      octoprint-nginx \
                     "
