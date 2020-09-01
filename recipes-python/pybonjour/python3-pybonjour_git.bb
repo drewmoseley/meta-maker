@@ -9,4 +9,4 @@ SRC_URI = "git://github.com/nickstenning/pybonjour.git"
 
 S = "${WORKDIR}/git"
 
-inherit distutils
+inherit distutils3
