@@ -1,16 +1,16 @@
-SUMMARY = "This plugin visualises the output from various firmware that support bed mesh leveling, noteably the Prusa G81 mesh leveling report and the Marlin G29 T bed topography report. The plugin utilizes Plotly js library to render a 3D surface of the bed's reported mesh on a tab within OctoPrint."
+SUMMARY = "Create a stabilized timelapse of your 3D prints."
 SECTION = "devel/python"
 
-HOMEPAGE = "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer"
+HOMEPAGE = "https://github.com/FormerLurker/Octolapse"
 
-LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=c25dca6f05d3d0d952c7fe9373c8b429"
+LICENSE = "Apache-2.0"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/Apache-2.0;md5=89aea4e17d99a7cacdbeed46a0096b10"
 
-SRC_URI = "git://github.com/jneilliii/OctoPrint-BedLevelVisualizer;protocol=https;branch=master"
-SRCREV = "4faf3109956284eb3a97246d63d30020318e050b"
+SRC_URI = "git://github.com/FormerLurker/Octolapse;protocol=https;tag=v0.4.0"
 S = "${WORKDIR}/git"
 
-DEPENDS = "octoprint python3-numpy python3-flask"
+DEPENDS = "octoprint python3-tornado python3-future python3-flask python3-jinja2 python3-markupsafe python3-werkzeug python3-itsdangerous python3-click python3-flask-login python3-flask-babel python3-pytz python3-flask-assets python3-watchdog python3-pathtools python3-frozendict python3-netaddr python3-netifaces-native python3-requests python3-urllib3 python3-chardet python3-certifi python3-idna python3-pyyaml python3-pkginfo python3-sarge python3-wrapt python3-cachelib python3-pylru python3-emoji python3-unidecode python3-regex-native python3-blinker python3-pyserial"
+RDEPENDS_${PN} += "python3-netifaces python3-regex"
 
 inherit setuptools3
 

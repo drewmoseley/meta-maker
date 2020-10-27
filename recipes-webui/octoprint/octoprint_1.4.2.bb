@@ -6,18 +6,14 @@ SECTION = "devel/python"
 LICENSE = "AGPL-3.0"
 LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=73f1eb20517c55bf9493b7dd6e480788"
 
-SRCREV = "45d3e7c8646c2cf8c2341616830fb492d73874f6"
-
-PV = "1.4.2+git${SRCPV}"
-
 PATCHTOOL = "git"
-SRC_URI = "git://github.com/OctoPrint/OctoPrint.git;protocol=https;branch=maintenance \
+SRC_URI = "git://github.com/OctoPrint/OctoPrint.git;protocol=https;tag=${PV};name=${BPN} \
            file://config.yaml \
            file://octoprint.service \
            file://octoprint \
            file://pip-sudo \
 "
-S = "${WORKDIR}/git"
+S="${WORKDIR}/git"
 
 inherit setuptools3 systemd useradd
 
