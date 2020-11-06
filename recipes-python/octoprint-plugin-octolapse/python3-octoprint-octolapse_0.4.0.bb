@@ -10,7 +10,7 @@ SRC_URI = "git://github.com/FormerLurker/Octolapse;protocol=https;tag=v0.4.0"
 S = "${WORKDIR}/git"
 
 DEPENDS = "octoprint python3-tornado python3-future python3-flask python3-jinja2 python3-markupsafe python3-werkzeug python3-itsdangerous python3-click python3-flask-login python3-flask-babel python3-pytz python3-flask-assets python3-watchdog python3-pathtools python3-frozendict python3-netaddr python3-netifaces-native python3-requests python3-urllib3 python3-chardet python3-certifi python3-idna python3-pyyaml python3-pkginfo python3-sarge python3-wrapt python3-cachelib python3-pylru python3-emoji python3-unidecode python3-regex-native python3-blinker python3-pyserial"
-RDEPENDS_${PN} += "python3-netifaces python3-regex"
+RDEPENDS_${PN} += "python3-netifaces python3-regex python3-pillow python3-six octoprint python3-psutil python3-setuptools python3-awesome-slugify python3-file-read-backwards"
 
 inherit setuptools3
 
