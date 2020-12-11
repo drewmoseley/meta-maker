@@ -9,6 +9,7 @@ SRC_URI = "git://github.com/jacksonliam/mjpg-streamer.git;protocol=https \
            file://0001-slightly-unbreak-raspi-cmake.patch;striplevel=2 \
            file://d0dcc2e0bbe84ef0937def2d7d226eee88150739.patch \
            file://6970dcfb886477683558fd6caaefa990f7fbed75.patch \
+           file://${BPN}.service \
           "
 
 PATCHTOOL = "git"
@@ -23,7 +24,9 @@ ASNEEDED_rpi = ""
 
 S = "${WORKDIR}/git/mjpg-streamer-experimental"
 
-inherit cmake
+inherit cmake systemd
+SYSTEMD_PACKAGES = "${PN}"
+SYSTEMD_SERVICE_${PN} = "${BPN}.service"
 
 OECMAKE_GENERATOR="Unix Makefiles"
 EXTRA_OECMAKE = "-DENABLE_HTTP_MANAGEMENT=ON"
@@ -32,9 +35,13 @@ EXTRA_OECMAKE_append_rpi = " ${@bb.utils.contains("MACHINE_FEATURES", "vc4graphi
 
 do_install() {
     oe_runmake install DESTDIR=${D}
+
+    install -d ${D}${systemd_unitdir}/system
+    install -m 0644 ${WORKDIR}/${BPN}.service ${D}${systemd_unitdir}/system
 }
 
-FILES_${PN} += "${libdir}/*.so"
+FILES_${PN} += "${libdir}/*.so \
+                ${systemd_unitdir/system/${BPN}.service"
 
 # And make it rpi specific due to depending on rpi binaries
 PACKAGE_ARCH_rpi = "${MACHINE_ARCH}"

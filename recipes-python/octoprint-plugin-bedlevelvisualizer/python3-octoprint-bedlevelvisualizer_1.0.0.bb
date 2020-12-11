@@ -6,7 +6,7 @@ HOMEPAGE = "https://github.com/jneilliii/OctoPrint-BedLevelVisualizer"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=c25dca6f05d3d0d952c7fe9373c8b429"
 
-SRC_URI = "git://github.com/jneilliii/OctoPrint-BedLevelVisualizer;protocol=https;branch=${PV};tag=${PV}"
+SRC_URI = "git://github.com/jneilliii/OctoPrint-BedLevelVisualizer;protocol=https;tag=${PV}"
 S = "${WORKDIR}/git"
 
 DEPENDS = "octoprint python3-numpy python3-flask"

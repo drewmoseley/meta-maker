@@ -1,0 +1,11 @@
+[Unit]
+Description=Start mjpg-streamer for the OctoPrint
+ConditionPathExists=/dev/video0
+
+[Service]
+ExecStart=mjpg_streamer -i "input_uvc.so -d /dev/video0 -r 1280x720 -" -o "output_http.so -w /usr/share/mjpg-streamer/www"
+Restart=always
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
