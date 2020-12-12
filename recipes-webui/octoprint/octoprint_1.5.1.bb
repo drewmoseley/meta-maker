@@ -128,6 +128,10 @@ RDEPENDS_${PN}_class-target = " \
                   python3-octoprint-filecheck \
                   python3-octoprint-firmwarecheck \
                   python3-typing \
+                  python3-zeroconf \
+                  python3-feedparser \
+                  python3-ifaddr \
+                  python3-sgmllib3k \
                   sudo \
                   curaengine \ 
 "
